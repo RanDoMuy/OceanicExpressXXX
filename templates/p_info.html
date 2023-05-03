@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Information</title>
+    <link rel="stylesheet" href="{% static 'css/p_info.css' %}">
+</head>
+<body>
+    <div id="body">
+        <div id="head">
+            <header>Oceanic Express</header>
+            <text>
+                Thank you for choosing Oceanic Express for your shipping needs!<br>
+                Your package is on its way and we appreciate your business.<br>
+                Please enter your tracking number below to track your package's journey to its final destination.
+            </text>
+        </div>
+        <div id="p_info">
+            
+            <div class="box">
+                <header>PACKAGE ID: {{packageinfo.Tracking_Id}}</header><br>
+                <label>Date of delivery:  {{packageinfo.Expected_Delivery_Date}}</label><br>
+                <label>Status: {{packageinfo.Shipment_Status}}</label><br>
+                <label>Date Shipped: {{packageinfo.Shipment_Date}}</label><br>
+            </div>
+
+            <div class="box">
+                <header>PACKAGE DETAILS</header><br>
+                <label>Name: {{packageinfo.Package_Name}}</label><br>
+                <label>Quantity: {{packageinfo.Quantity}}</label><br>
+                <label>Condition: {{packageinfo.Package_Condition}}</label><br>
+            </div>
+
+            <div class="box">
+                <header>ORIGIN</header><br>
+                <label>Sender Name: {{packageinfo.Sender_FullName}}</label><br>
+                <label>Sender Email: {{packageinfo.Sender_Email}}</label><br>
+                <label>Location: {{packageinfo.Sender_Address}}</label><br>
+                <label>Shipment Date: {{packageinfo.Shipment_Date}}</label><br>
+            </div>
+
+            <div class="box">
+                <header>DESTINATION</header><br>
+                <label>Receiver Name: {{packageinfo.Receiver_FullName}}</label><br>
+                <label>Receiver Email: {{packageinfo.Receiver_Email}}</label><br>
+                <label>Receiver Address: {{packageinfo.Receiver_Address}}</label><br>
+                <label>Date of delivery: {{packageinfo.Expected_Delivery_Date}}</label><br>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

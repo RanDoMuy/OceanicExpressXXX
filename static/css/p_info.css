@@ -1,0 +1,59 @@
+body{
+    font-family: sans-serif;
+    color: white;
+    margin: 0%;
+    background-image: url("../images/background8.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#body{
+    background-color: rgba(0, 0, 0, 0.548);     
+    padding: 2%;
+    height: 100%;
+}
+
+#head{
+    display: flex;
+    flex-direction: column;
+}
+
+#head header{
+    font-size: 50px;
+    margin-bottom: 3%;
+}
+
+#p_info{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    align-items: center;
+}
+
+.box{
+    margin-top: 5%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 1%;
+    padding-top: 0%;
+}
+
+.box header{
+    background-color: rgb(0, 30, 75);
+    padding: 1%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.box label{
+    font-size: 17px;
+    border-style: solid;
+    padding: 2%;
+    border-width: 1px;
+}
+
+

@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanic Express</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'scripts/script.js' %}"></script>
+</head>
+<body>
+    <!--Nav Bar-->
+    <div id="nav">
+        <a href="#head">Home</a>
+        <a href="#track">Track</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!--SignUp-->
+    <div id="signup" class="ls">
+        <button class="close_btn" onclick="close_signup()">X</button>
+        <header class="header">Sign Up</header>
+        <form name="form1" class="form" method="POST">{% csrf_token %}
+            <label class="label">FullName</label>
+            <input class="input" type="text" placeholder="FullName" required name="fullname">
+
+            <label class="label">Email Address</label>
+            <input class="input" type="email" placeholder="Email Address" required name="email">
+
+            <label class="label">Phone Number</label>
+            <input class="input" type="tel" placeholder="Phone Number" required name="number">
+
+            <label class="label">Create Password</label>
+            <input class="input" type="password" placeholder="Create Password" required>
+
+            <label class="label">Confirm Password</label>
+            <input class="input" type="password" placeholder="Confirm Password" required name="password">
+            <input class="submit_btn" type="submit" value="Sign up">
+        </form>
+    </div>
+
+    <!--Login-->
+    <div id="login" class="ls">
+        <button class="close_btn" onclick="close_login()">X</button>
+        <header class="header">Login</header>
+        <form name="form2" class="form">
+            <label class="label">Email Address</label>
+            <input class="input" type="email" placeholder="Email Address" required name="email">
+            <label class="label">Password</label>
+            <input class="input" type="password" placeholder="Password" required name="password">
+            <input class="submit_btn" type="submit" value="Login">
+        </form>
+    </div>
+
+
+    <div id="head">
+        <div id="bck_color">
+            <h1><u>Oceanic Express</u></h1>
+            <h3 style="font-style: italic;">Ship with confidence</h3>
+            <text>
+                Looking for a reliable and affordable shipping solution?<br>
+                Look no further than Oceanic Express!<br>
+                We offer fast and secure shipping services to destinations around the world.<br>
+                Whether you're shipping a small package or a large shipment, we've got you covered.<br>
+                Get started today and experience the convenience of shipping with Oceanic Express.<br>
+            </text>
+            <button onclick="open_signup()">Join us</button>
+            <button onclick="open_login()">Login</button>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <div id="track">
+            <h2 style="color: rgb(0, 18, 100);"><u>TRACK YOUR PACKAGE</u></h2>
+            <text style="font-size: 17px;">
+                Thank you for choosing Swift-Transit for your shipping needs!<br>
+                Your package is on its way and we appreciate your business.<br>
+                Please enter your tracking number below to track your package's journey to its final destination.
+            </text>
+
+            <form method="POST" name="form3">{% csrf_token %}
+                <input type="text" placeholder="Enter Package ID" required name="tracking_id">
+                <input id="submit_btn" type="submit" value="Track">
+            </form>
+        </div>
+
+
+        <div id="services">
+            <h2 style="color: rgb(0, 18, 100);"><u>WHY CHOOSE US</u></h2>
+            <text style="font-size: 17px;">Oceanic Express provides a range of shipping services to meet the needs of businesses and individuals alike. Our services include:
+                <br><br>
+1. Standard Shipping: Our standard shipping service is ideal for those who require a cost-effective and reliable option for sending packages and goods. We provide timely delivery with tracking and insurance options to ensure your shipment arrives safely and on time.
+<br><br>
+2. Express Shipping: When you need your package to arrive as soon as possible, we offer express shipping services for both domestic and international shipments. Our express service includes same-day, next-day, and 2-day delivery options to ensure your package arrives on time.
+<br><br>
+3. International Shipping: Our international shipping services allow you to send packages and goods to virtually any country in the world. We offer customs clearance and documentation services, ensuring that your shipment complies with all regulations and arrives at its destination on time.
+<br><br>
+4. Specialized Shipping: We provide specialized shipping services for fragile, oversized, and high-value items. Our team of experts will handle your shipment with the utmost care and ensure that it arrives safely and securely.
+<br><br>
+5. Warehousing and Fulfillment: In addition to shipping services, we offer warehousing and fulfillment services to help you streamline your logistics operations. Our secure, climate-controlled facilities can store your inventory and our fulfillment services can help you manage your orders efficiently.
+<br><br>
+At Oceanic Express, we pride ourselves on providing customized shipping solutions tailored to your specific needs. Contact us to learn more about our services and how we can help you with your shipping needs.
+            </text>
+
+        </div>
+
+
+        <div id="about">
+            <h2 style="color: rgb(0, 18, 100);"><u>ABOUT US</u></h2>
+            <text style="font-size: 17px;">
+                Oceanic Express is a reliable and efficient shipping company that is committed to providing top-notch transportation services for businesses and individuals. With years of experience in the industry, we have built a reputation for delivering goods and parcels safely, securely, and on time.
+                <br><br>
+At Oceanic Express, we understand that every shipment is unique and that our customers have different needs. That's why we offer a wide range of shipping services that cater to various requirements, including standard, express, and specialized shipping options. We use the latest technology and equipment to ensure that every shipment is handled with utmost care and attention to detail.
+<br><br>
+Our team of experienced and highly skilled professionals is dedicated to providing exceptional customer service. We strive to go above and beyond to ensure that our clients have a hassle-free shipping experience. Our customer support is available 24/7 to answer any questions, resolve issues, and provide updates on shipment status.
+<br><br>
+We also prioritize environmental sustainability in our operations, and we take every opportunity to reduce our carbon footprint. We use fuel-efficient vehicles and implement eco-friendly practices in our facilities and operations.
+<br><br>
+At Oceanic Express, we believe that our success is closely tied to the success of our clients. That's why we are committed to building long-term partnerships based on trust, reliability, and mutual benefit. Whether you need to ship locally or internationally, small or large, trust Oceanic Express to deliver your goods with care and efficiency.
+            </text>
+        </div>
+
+        <center><h2 style="color: rgb(0, 18, 100);"><u>CUSTOMER REVIEWS</u></h2></center>
+        <marquee><div id="reviews">
+            
+
+            <div class="reviews">
+                <img src="{% static '/images/cus1.png' %}" alt="Avatar" style="width:90px">
+                <p>I've used this shipping website for both personal and business shipments,<br>
+                    and they have never let me down. Their rates are competitive,<br>
+                    their website is easy to use,<br>
+                    and their customer service team is always available to answer any questions I have.<br>
+                    I highly recommend this shipping website to anyone in need of reliable shipping services.</p>
+            </div>
+
+            <div class="reviews">
+                <img src="{% static '/images/cus2.png' %}" alt="Avatar" style="width:90px">
+                <p>I needed to ship a large,<br>
+                    fragile item and was worried about it getting damaged during transit.<br>
+                    However, this shipping website exceeded my expectations!<br>
+                    They provided me with a sturdy box and plenty of protective padding,<br>
+                    and my item arrived at its destination in perfect condition.<br> 
+                    I couldn't be happier with the service I received.</p>
+            </div>
+
+            <div class="reviews">
+                <img src="{% static '/images/cus3.png' %}" alt="Avatar" style="width:90px">
+                <p>I was hesitant to use an online shipping service at first,<br>
+                    but I'm so glad I did!<br>
+                    The process was simple and straightforward,<br>
+                    and my package arrived even faster than I expected.<br> 
+                    I was also pleasantly surprised by how affordable the shipping rates were.<br> 
+                    I will definitely be using this website for all of my future shipping needs.</p>
+            </div>
+
+            <div class="reviews">
+                <img src="{% static '/images/cus4.png' %}" alt="Avatar" style="width:90px">
+                <p>I've used several shipping websites in the past,<br>
+                   but this one is by far my favorite.<br>
+                   The website is user-friendly and<br>
+                   the customer service team is top-notch.<br> 
+                   They were able to answer all of my questions and<br> 
+                   provide me with updates on my package throughout the shipping process.<br> 
+                   I will definitely be using this website again in the future.</p>
+            </div>
+
+            <div class="reviews">
+                <img src="{% static '/images/cus5.png' %}" alt="Avatar" style="width:90px">
+                <p>I had a great experience using this shipping website!<br>
+                   The process was quick and easy,<br>
+                   and my package arrived at its destination<br> 
+                   on time and in perfect condition.<br> 
+                   I appreciate the affordable pricing as well.<br>
+                   Highly recommend!</p>
+            </div>
+        </div></marquee>
+        
+
+    </div>
+
+    <div id="footer">
+        <h2 style="font-style: italic;">Oceanic Express</h2>
+        <div id="contact">
+            <h3><u>CONTACT</u></h3>
+            Email:<br><br>
+            Phone: 
+        </div>
+        <text style="font-size: 10px;">Copyright © 2003-2022  Oceanic Supply Chain Express Co., Ltd. | All Rights Reserved</text>
+    </div>
+</body>
+</html>
